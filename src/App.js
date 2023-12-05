@@ -1,23 +1,25 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ToDoList from './ToDoList';
+import { useState } from "react"
 
-const todos = [
+
+
+
+export default function App() {
+ const [todos, setTodos] = useState([
   'Have Fun',
   'Learn React',
   'Learn the MERN-Stack'
-];
+ ]);
 
-function Heading(){
-  return <h1>React To-Do</h1>;
-}
-function App() {
-  return (
+ const [showTodos, setShowTodos] = useState(true)
+
+return (
   <div className='App'>
-    <Heading />
-    <ToDoList todos = {todos}/>
+    <h1>React To-Do</h1>
+    {showTodos && <ToDoList todos = {todos}/>}
   </div> 
   );
 }
-
-export default App ;

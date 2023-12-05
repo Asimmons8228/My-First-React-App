@@ -1,11 +1,11 @@
 import ToDoListItem from "./ToDoListItem";
+import "./ToDoListItem.css"
 
 function ToDoList({todos}) {
-    const toDoListItems = todos.map( t => <ToDoListItem />)
-        return(
-        <ul>
-            {todos.map((t,idx) => (
-            <ToDoListItem todo ={t} key={idx}/>
+    return(
+        <ul className="padding-none">
+            {todos.map((t, idx) => (
+            <ToDoListItem todo ={t} key={idx} />
             ))}
         </ul>
     );
